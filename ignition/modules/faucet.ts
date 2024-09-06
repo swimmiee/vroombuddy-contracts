@@ -7,8 +7,6 @@ const contracts = {
   },
 };
 
-
-
 async function faucet() {
   const account = await ethers.getSigners();
   const ADMIN_ADDRESS = account[0];
@@ -17,8 +15,9 @@ async function faucet() {
   const env = contracts.local;
 
   console.log("Admin address: ", ADMIN_ADDRESS.address);
-    console.log("Client address: ", CLIENT_ADDRESS.address);
+  console.log("Client address: ", CLIENT_ADDRESS.address);
 
+  return;
   const USDC = await ethers.getContractAt("USDC", env.usdc);
   const adminBal = await USDC.balanceOf(ADMIN_ADDRESS.address);
   const clientBal = await USDC.balanceOf(CLIENT_ADDRESS.address);
@@ -34,7 +33,7 @@ async function faucet() {
 
   console.log(await Vroombuddy.policyHolders(CLIENT_ADDRESS.address));
 
-//   await Vroombuddy.allowClaim(CLIENT_ADDRESS.address, ethers.parseUnits("100", 6));
+  //   await Vroombuddy.allowClaim(CLIENT_ADDRESS.address, ethers.parseUnits("100", 6));
 }
 
 faucet();
