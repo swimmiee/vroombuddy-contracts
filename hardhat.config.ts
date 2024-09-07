@@ -19,9 +19,10 @@ const config: HardhatUserConfig = {
       ],
     },
     hederatestnet: {
-      url: "https://testnet.hashio.io/api",
+      url: "https://testnet.hedera.validationcloud.io/v1/_EqqzNHjyYRuykKsXaRkpnM1D8kcLkBneV0A_HhgAh0",
       accounts: [
-        "8918087e7e85b1df077383d1b1215dc4c46f1427bfd77d245ba3b9724a165f1c",
+        process.env.ADMIN_PRIVATE_KEY!,
+        process.env.CLIENT_PRIVATE_KEY!,
       ],
     },
   },
